@@ -1,0 +1,14 @@
+package Boletin1;
+//Ejercicio 1
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//this no puede ser usado en static contex
+		A oa=new A();
+		oa.met();
+	}
+
+}
