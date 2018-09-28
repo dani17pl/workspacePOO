@@ -1,0 +1,40 @@
+package boletin2;
+
+public class Rectangulo {
+	//Atributos
+	private int ladoX;
+	private int ladoY;
+	
+	private Punto verticeII;
+	private Punto verticeID;
+	private Punto verticeSI;
+	private Punto verticeSD;
+	
+	//Constructor
+	
+	public Rectangulo(Punto verticeII, int ladoX, int ladoY)
+	{
+		this.verticeII=new Punto(verticeII.getX(),verticeII.getY());
+		this.verticeID=new Punto(verticeII.getX()+ladoX,verticeII.getY());
+		this.verticeSI=new Punto(verticeII.getX(),verticeII.getY()+ladoY);
+		this.verticeSD=new Punto(verticeII.getX()+ladoX,verticeII.getY()+ladoY);
+		this.ladoX=ladoX;
+		this.ladoY=ladoY;
+		
+	}
+	
+	public Rectangulo(Punto verticeII, Punto verticeSD)
+	{
+		this.ladoX=verticeSD.getX()-verticeII.getX();
+		this.ladoY=verticeSD.getY()-verticeII.getY();
+
+		this.verticeII=new Punto(verticeII.getX(),verticeII.getY());
+		this.verticeID=new Punto(verticeII.getX()+ladoX,verticeII.getY());
+		this.verticeSI=new Punto(verticeII.getX(),verticeII.getY()+ladoY);
+		this.verticeSD=new Punto(verticeII.getX()+ladoX,verticeII.getY()+ladoY);
+		
+	}
+	
+	
+
+}

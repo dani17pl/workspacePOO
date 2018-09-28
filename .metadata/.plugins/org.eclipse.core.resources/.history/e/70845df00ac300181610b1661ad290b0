@@ -1,0 +1,16 @@
+package boletin2;
+
+public class PruebaCirculo {
+
+	public static void main(String[] args) {
+		
+		Punto punto1=new Punto(2,3);
+		
+		Circulo circulo1= new Circulo(punto1,3);
+		Circulo circulo2= new Circulo(punto1,5);
+		
+		System.out.println(circulo1.getPunto());
+		circulo1.desplazar(3, 2);
+		System.out.println(circulo1.getPunto());
+	}
+}

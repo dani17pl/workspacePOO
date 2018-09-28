@@ -1,0 +1,29 @@
+package boletin2;
+
+public class Circulor {
+	//atributos
+	private Punto punto;
+	private int radio;
+	private int perimetro;
+	
+	//Constructor
+	
+	public Circulo
+	
+	
+	//Metodos
+	public int getPunto()
+	{
+		return punto;
+	}
+	public  int  getRadio()
+	{
+		return radio;
+	}
+	
+	public int perimetro()
+	{
+		return perimetro;
+	}
+
+}
