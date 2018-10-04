@@ -6,6 +6,10 @@ public class Circulo {
 	private int radio;
 	private int perimetro;
 	
+	//Constantes
+	public static final Punto ORIGEN_COORDENADAS=new Punto(0,0);
+	public static final int RADIO_POR_DEFECTO=5;
+	
 	//Constructor
 	
 	public Circulo(Punto punto, int radio)
@@ -16,8 +20,8 @@ public class Circulo {
 	
 	public Circulo()
 	{
-		this.punto=new Punto(0,0);
-		this.radio=5;	
+		this.punto=new Punto(ORIGEN_COORDENADAS.getX(),ORIGEN_COORDENADAS.getY());
+		this.radio=RADIO_POR_DEFECTO;	
 	}
 	
 	public Circulo(Circulo circulo)
