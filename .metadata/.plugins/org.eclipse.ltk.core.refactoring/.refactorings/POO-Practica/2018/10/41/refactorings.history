@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;maquina_tragaperras&apos; to &apos;tragaperras&apos;&#x0D;&#x0A;- Original project: &apos;POO-Practica&apos;&#x0D;&#x0A;- Original element: &apos;POO-Practica/src/maquina_tragaperras&apos;&#x0D;&#x0A;- Renamed element: &apos;POO-Practica/src/tragaperras&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;maquina_tragaperras&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;maquina_tragaperras" name="tragaperras" qualified="false" references="true" stamp="1539272603564" textual="false" version="1.0"/>
+</session>
