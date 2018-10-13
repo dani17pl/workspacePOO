@@ -1,0 +1,88 @@
+package tragaperras;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Maquina {
+
+	//Atributos
+	private final int casillas;
+	private double precio;
+	private double credito;
+	private final ArrayList<Premio> premios;
+	
+	//Constructor
+	public Maquina(int casillas, double precio, Premio ...premios)
+	{
+		this.casillas=casillas;
+		this.credito=0.0;
+		this.precio=precio;
+		this.premios=new ArrayList();
+		for (Premio premio : premios) {
+			this.premios.add(premio);
+			
+		}
+		
+	}
+	
+	//Metodos consultivos GET y SET
+	public int getCasillas()
+	{
+		return casillas;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public double getCredito() {
+		return credito;
+	}
+
+	public ArrayList<Premio> getPremios() {
+		ArrayList<Premio> premios=new 	ArrayList<Premio>(this.premios);
+		return premios;
+	}
+	
+	//Metodos funcionalidad
+	
+	public void incrementarCredito(double incremento)
+	{
+		this.credito=+incremento;
+	}
+	
+	private ArrayList<Fruta> generarCombinacion() {
+		ArrayList<Fruta> combinacion = new ArrayList<Fruta>(this.casillas);
+		Random random = new Random(); 
+		Fruta[] todasLasFrutas = Fruta.values();
+		for (int i = 0; i < this.casillas; i++) 
+		{ 
+			Fruta fruta = todasLasFrutas[random.nextInt(todasLasFrutas.length)]; 
+			combinacion.add(Fruta.FRESA);
+		} 
+		return combinacion;
+	}
+	public ArrayList<Fruta> jugar()
+	{
+		if(this.credito<this.precio)
+		{
+			return null;
+		}
+		this.credito-=this.precio;
+		ArrayList<Fruta> combinacion = new ArrayList<Fruta>(this.casillas);
+		combinacion=this.generarCombinacion();
+		System.out.println(combinacion);
+		for (Premio premio : premios) {
+			System.out.println(premio);
+			System.out.println(combinacion.equals(premio));
+			if(combinacion.equals(premio))
+					{
+					this.credito=this.credito+premio.getCantidad();
+					}
+		}
+		return combinacion;
+	}
+	
+	
+	
+}
