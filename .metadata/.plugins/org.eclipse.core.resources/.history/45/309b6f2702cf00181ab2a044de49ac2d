@@ -1,5 +1,0 @@
-package tragaperras;
-
-public enum Fruta {
-	 fresa, sandía, plátano, melocotón, pera
-}

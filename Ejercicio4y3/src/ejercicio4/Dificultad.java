@@ -8,5 +8,5 @@ package ejercicio4;
  *
  */
 public enum Dificultad {
-
-}
+	alta, media, baja
+} 

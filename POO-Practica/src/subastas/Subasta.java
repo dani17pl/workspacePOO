@@ -31,7 +31,7 @@ public class Subasta {
 		return abierta;
 	}
 	public LinkedList<Puja> getPujas() {
-		LinkedList<Puja> pujas = new LinkedList(this.pujas);
+		LinkedList<Puja> pujas = new LinkedList<Puja>(this.pujas);
 		return pujas;
 	}
 	public Puja getPuja_mayor() {

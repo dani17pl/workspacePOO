@@ -20,7 +20,7 @@ public class Programa {
 		while (maquina.getCredito() > 0)
 		{ //4.1 Realiza la jugada 
 			System.out.println(maquina.getCredito());
-			ArrayList<Fruta> combinacion = maquina.jugar();
+			ArrayList<Fruta> combinacion = (ArrayList<Fruta>) maquina.jugar();
 			//4.2 Muestra la combinación obtenida y el crédito 
 			System.out.println(combinacion.toString() + " --- " + maquina.getCredito());
 			//4.3 Pide al usuario que pulse intro para continuar 

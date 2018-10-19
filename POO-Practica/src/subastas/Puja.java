@@ -3,9 +3,9 @@ package subastas;
 
 public class Puja {
 
-	private Usuario pujador;
-	private double cantidad;	
-	private Subasta subasta;
+	private final Usuario pujador;
+	private final double cantidad;	
+	private final Subasta subasta;
 
 	
 	//Constructor
