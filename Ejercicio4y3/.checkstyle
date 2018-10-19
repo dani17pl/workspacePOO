@@ -7,7 +7,7 @@
   <local-check-config name="POOconfiguration" location="D:\Escritorio\workspacePOO\Ejercicio4y3\config\POOconfig.xml" type="external" description="">
     <additional-data name="protect-config-file" value="true"/>
   </local-check-config>
-  <fileset name="all" enabled="true" check-config-name="cofiguracion" local="false">
+  <fileset name="all" enabled="true" check-config-name="configuracion" local="false">
     <file-match-pattern match-pattern="." include-pattern="true"/>
   </fileset>
 </fileset-config>
