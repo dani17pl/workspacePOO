@@ -15,7 +15,7 @@ public class Examen {
 	//Atributos
 	private final String texto;
 	private LinkedList<Pregunta> preguntas;
-	private int numero_preguntas;
+	//numero de preguntas es una propiedad calculable
 	
 	/**
 	 * @author Dani_
@@ -48,9 +48,8 @@ public class Examen {
 	 * @author Dani_
 	 * @return numero de preguntas
 	 */
-	public int getNumeroPreguntas() {
-		this.numero_preguntas = this.preguntas.size();
-		return this.numero_preguntas;
+	public int getNumeroPreguntas() { 
+		return this.preguntas.size();
 	}
 	
 	//Metodos
@@ -64,27 +63,27 @@ public class Examen {
 	
 	/**
 	 * @author Dani_
-	 * @param indice_pregunta indice de la pregunta que queremos obtener
+	 * @param indicePregunta indice de la pregunta que queremos obtener
 	 * @return devuelve null si el indice no se encuentr en la lista si no devuelve la pregunta
 	 */
-	public Pregunta obtenerPregunta(int indice_pregunta) {
-		if (indice_pregunta > this.preguntas.size() - 1) {
+	public Pregunta obtenerPregunta(int indicePregunta) {
+		if (indicePregunta > this.preguntas.size() - 1) {
 			return null;
 		}
 		
-		return this.preguntas.get(indice_pregunta - 1);
+		return this.preguntas.get(indicePregunta - 1);
 	}
 	
 	/**
 	 * @author Dani_
-	 * @param indice_pregunta indice de la pregunta que queremos borrar
+	 * @param indicePregunta indice de la pregunta que queremos borrar
 	 * @return devuelve false si el indice no se encuentr en la lista si no true si se borra
 	 */
-	public boolean  borrarPregunta(int indice_pregunta) {
-		if (indice_pregunta > this.preguntas.size() - 1 || indice_pregunta < 1) {
+	public boolean  borrarPregunta(int indicePregunta) {
+		if (indicePregunta > this.preguntas.size() - 1 || indicePregunta < 1) {
 			return false;
 		}	
-		this.preguntas.remove(indice_pregunta - 1);
+		this.preguntas.remove(indicePregunta - 1);
 		return true;
 	}
 	
@@ -100,7 +99,7 @@ public class Examen {
 		
 		double preguntasAcertadas = 0;
 		for (int i = 0; i < respuestas.length; i++) {
-			if (respuestas[i] == this.preguntas.get(i).getRespuesta_correcta()) {
+			if (respuestas[i] == this.preguntas.get(i).getRespuestaCorrecta()) {
 				preguntasAcertadas++;
 			}	
 		}

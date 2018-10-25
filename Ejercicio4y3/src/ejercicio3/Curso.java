@@ -14,64 +14,102 @@ public class Curso {
 
 	//Atributos
 	private final String titulo;
-	private final double precio_matricula;
-	private LinkedList<Alumno> alumnos_matriculados;
-	private int numero_alumnos_matriculados;
+	private final double precioMatricula;
+	private LinkedList<Alumno> alumnosMatriculados;
 	private final int cupo;
 	private LinkedList<Calificacion> calificaciones;
+	// Numero de alumnos es una propiedad calculable
 	
 	//Constructor
-	public Curso(String titulo, double precio_matricula, int cupo) {
-		this.titulo=titulo;
-		this.precio_matricula = precio_matricula;
+	/**
+	 * @author Dani_
+	 * @param titulo nombre del curso
+	 * @param precioMatricula el precio del curso
+	 * @param cupo numero maximo de alumnos que admite el curso
+	 */
+	public Curso(String titulo, double precioMatricula, int cupo) {
+		this.titulo = titulo;
+		this.precioMatricula = precioMatricula;
 		this.cupo = cupo;
-		this.alumnos_matriculados = new LinkedList<Alumno>();
-		this.calificaciones=new LinkedList<Calificacion>();
+		this.alumnosMatriculados = new LinkedList<Alumno>();
+		this.calificaciones = new LinkedList<Calificacion>();
 	}
 
 	//Metodos consultores
+	/**
+	 * @author Dani_
+	 * @return devuelve el titulo del curso
+	 */
 	public String getTitulo() {
 		return titulo;
 	}
-
-	public double getPrecio_matricula() {
-		return precio_matricula;
+	
+	/**
+	 * @author Dani_
+	 * @return devuelve el Precio de la matricula
+	 */
+	public double getPrecioMatricula() {
+		return precioMatricula;
+	}
+	/**
+	 * @author Dani_
+	 * @return devuelve la lista de alumnos matriculados
+	 */
+	public List<Alumno> getAlumnosMatriculados() {
+		LinkedList<Alumno> alumnosMatriculados = new LinkedList<Alumno>(this.alumnosMatriculados);
+		return alumnosMatriculados;
+	}
+	
+	/**
+	 * @author Dani_
+	 * @return devuelve el numero de alumnos matriculados
+	 */
+	public int getNumeroAlumnosMatriculados() {
+		return  alumnosMatriculados.size();
 	}
 
-	public List<Alumno> getAlumnos_matriculados() {
-		LinkedList<Alumno>alumnos_matriculados=new LinkedList<Alumno>(this.alumnos_matriculados);
-		return alumnos_matriculados;
-	}
-
-	public int getNumero_alumnos_matriculados() {
-		this.numero_alumnos_matriculados=alumnos_matriculados.size();
-		return numero_alumnos_matriculados;
-	}
-
+	/**
+	 * @author Dani_
+	 * @return devuelve el cupo del curso
+	 */
 	public int getCupo() {
 		return cupo;
 	}
-
+	
+	/**
+	 * @author Dani_
+	 * @return devuelve la lista de calificaciomes
+	 */
 	public List<Calificacion> getCalificaciones() {
-		LinkedList<Calificacion>calificaciones=new LinkedList<Calificacion>(this.calificaciones);
-		return calificaciones;
+		LinkedList<Calificacion> calificaciones = new LinkedList<Calificacion>(this.calificaciones);
+		return calificaciones; 
 	}
 	
 	//Metodos operacionales
-	
+	/**
+	 * @author Dani_
+	 * @param alumno Alumno que se matriculara en el curso
+	 * @return devuelve falso si el alumno no se puede matricular y verdadero en caso contrario
+	 */
 	public boolean matricularAlumno(Alumno alumno) {
-		if (this.alumnos_matriculados.contains(alumno) || alumno.getCredito() < precio_matricula
-				|| this.getNumero_alumnos_matriculados() >= cupo) {
+		if (this.alumnosMatriculados.contains(alumno) || alumno.getCredito() < precioMatricula
+				|| this.getNumeroAlumnosMatriculados() >= cupo) {
 			return false;
 		}
 		
-		this.alumnos_matriculados.add(alumno);
-		alumno.decrementarCredito(precio_matricula);
+		this.alumnosMatriculados.add(alumno);
+		alumno.decrementarCredito(precioMatricula);
 		return true;
 	}
 	
+	/**
+	 * @author Dani_
+	 * @param alumno Alumno que se matriculara en el curso
+	 * @param nota obtenida por el alumno
+	 * @return devuelve falso si el alumno no se puede calificarr y verdadero en caso contrario
+	 */
 	public boolean calificarAlumno(Alumno alumno, int nota) {
-		if (!this.alumnos_matriculados.contains(alumno) || nota > 10 || nota < 0 ) {
+		if (!this.alumnosMatriculados.contains(alumno) || nota > 10 || nota < 0) {
 			return false;
 		}
 		

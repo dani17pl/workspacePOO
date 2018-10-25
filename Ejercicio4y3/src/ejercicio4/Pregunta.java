@@ -11,30 +11,30 @@ public class Pregunta {
 	
 	//Atributos
 	private final String texto;
-	private final String respuesta_correcta;
+	private final String respuestaCorrecta;
 	private final Dificultad dificultad;
 	
 	//Constructores
 	/**
 	 * @author Dani_
 	 * @param texto es un String con el texto de la pregunta
-	 * @param respuesta_correcta la solucion
+	 * @param respuestaCorrecta la solucion
 	 * @param dificultad puede ser baja media o alta
 	 */
-	public Pregunta(String texto, String respuesta_correcta, Dificultad dificultad) {
+	public Pregunta(String texto, String respuestaCorrecta, Dificultad dificultad) {
 		this.texto = texto;
-		this.respuesta_correcta = respuesta_correcta;
+		this.respuestaCorrecta = respuestaCorrecta;
 		this.dificultad = dificultad;
 	}
 	
 	/**
 	 * @author Dani_
 	 * @param texto es un String con el texto de la pregunta
-	 * @param respuesta_correcta la solucion
+	 * @param respuestaCorrecta la solucion
 	 */
-	public Pregunta(String texto, String respuesta_correcta) {
+	public Pregunta(String texto, String respuestaCorrecta) {
 		this.texto = texto;
-		this.respuesta_correcta = respuesta_correcta;
+		this.respuestaCorrecta = respuestaCorrecta;
 		this.dificultad = Dificultad.media;
 	}
 	
@@ -51,8 +51,8 @@ public class Pregunta {
 	 * @author Dani_
 	 * @return devuelve la solucion de la pregunta
 	 */
-	public String getRespuesta_correcta() {
-		return respuesta_correcta;
+	public String getRespuestaCorrecta() {
+		return respuestaCorrecta;
 	}
 	/**
 	 * @author Dani_

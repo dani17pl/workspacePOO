@@ -11,6 +11,9 @@ import java.util.LinkedList;
  */
 public class Programa {
 
+	/**
+	 * @param args 
+	 */
 	public static void main(String[] args) {
 		
 		Alumno alumno1 = new Alumno("Pepe", "34678904");
@@ -30,7 +33,7 @@ public class Programa {
 			curso.matricularAlumno(alumno3);
 			
 			System.out.println("Alumnos matriculados en " + curso.getTitulo() + ": ");
-			for (Alumno alumno : curso.getAlumnos_matriculados()) {
+			for (Alumno alumno : curso.getAlumnosMatriculados()) {
 				System.out.println("\t" + alumno.getNombre());
 				curso.calificarAlumno(alumno, 10);
 			}
