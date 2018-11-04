@@ -4,6 +4,8 @@
 package bitacora;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Dani_
@@ -12,12 +14,13 @@ import java.util.HashSet;
 public class Bitacora {
 
 	private final String nombre;
-	private HashSet<Entrada> entradas;
+	private LinkedList<Entrada> entradas;
 	//Nunmero entradas propiedad calculable
 	
 	//Constructor
 	public Bitacora(String nombre) {
-		this.nombre=nombre;
+		this.nombre = nombre;
+		this.entradas = new LinkedList<Entrada>();
 	}
 	
 	//Metodos consulta
@@ -26,7 +29,11 @@ public class Bitacora {
 		return nombre;
 	}
 	
-	public HashSet<Entrada> getEntradas() {
+	public List<Entrada> getEntradas() {
+		if(entradas.isEmpty()) {
+			return null;
+		}
+	//	LinkedList<Entrada> entradas = new LinkedList<Entrada>(this.entradas);
 		return entradas;
 	}
 	
