@@ -45,5 +45,12 @@ public class Reserva {
 	}
 	
 	//Metodo
-	
+	public String toString (){
+	       
+        return "Reserva: \n"
+        		+ "usuario :" +this.usuario + "\n"
+        		+ "codigo de reserva:" +this.codigoReserva + "\n"
+        		+ "fecha:" +this.fecha + "\n"
+        		;
+    }
 }
