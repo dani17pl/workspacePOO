@@ -93,7 +93,7 @@ public class LicenciaDiario extends LicenciaTransaccionesLimitada {
 		}
 	}
 
-	public Licencia clone() {
+	public LicenciaDiario clone() {
 		LicenciaDiario copiaLicencia = (LicenciaDiario) super.clone();
 		//Modificamos para hacer la copia profunda
 		copiaLicencia.mapa = new HashMap<Integer,LinkedList<Transaccion>>(this.mapa);

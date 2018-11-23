@@ -30,9 +30,23 @@ public class Ocupacion {
 		
 		Ocupacion otro = (Ocupacion) obj;
 		
-		return this.tramo == otro.tramo && this.fechaCaducidad.equals(otro.fechaCaducidad);
+		return this.tramo.equals(otro.tramo) && this.fechaCaducidad.equals(otro.fechaCaducidad);
 	}
 	
+	/**
+	 * @return the tramo
+	 */
+	public Tramo getTramo() {
+		return tramo;
+	}
+
+	/**
+	 * @return the fechaCaducidad
+	 */
+	public LocalDate getFechaCaducidad() {
+		return fechaCaducidad;
+	}
+
 	@Override
 	public int hashCode() {
 		int primo = 31;
@@ -41,5 +55,13 @@ public class Ocupacion {
 		result = primo * result + this.fechaCaducidad.hashCode();
 		return result;
 	}
+
+	@Override
+	public String toString (){	       
+        return 
+        		 "tramo :" +this.tramo + "\n"
+        		+ "fechaCaducidad:" +this.fechaCaducidad
+        		;
+    }
 	
 }

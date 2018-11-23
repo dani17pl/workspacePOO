@@ -16,10 +16,10 @@ public class LicenciaTemporal extends Licencia {
 	private boolean caducada;
 	
 	public LicenciaTemporal(String email, String servicio) {
-		super(email,servicio);	
-		this.fechaCaducidad= LocalDate.of(super.getFechaCreacion().getYear(), super.getFechaCreacion().getMonth(), super.getFechaCreacion().getDayOfMonth()).plusMonths(3);
-		this.caducada = false;
-		
+		//super(email,servicio);	
+		//this.fechaCaducidad= super.getFechaCreacion().plusMonths(3);
+		//this.caducada = false;
+		this(email,servicio,LocalDate.now().plusMonths(3));	
 	}
 	
 	public LicenciaTemporal(String email, String servicio, LocalDate fechaCaducidad) {

@@ -47,7 +47,7 @@ public class LicenciaTransaccionesLimitada extends Licencia  {
 		}
 	}
 	
-	public Licencia clone() {
+	public LicenciaTransaccionesLimitada clone() {
 		LicenciaTransaccionesLimitada copiaLicencia = (LicenciaTransaccionesLimitada) super.clone();
 		//Modificamos para hacer la copia profunda
 		 
