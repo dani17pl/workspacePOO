@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Ejercicio3GestionLicensias;
+package ejercicio3GestionLicensias;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -13,7 +13,9 @@ import java.util.LinkedList;
 public class Programa {
 
 	/**
-	 * @param args
+	 * Metodo main. Donde empieza el programa
+	 *
+	 * @param args argumentos.
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,9 +26,10 @@ public class Programa {
 		int day = fechaaux.getDayOfMonth();	
 		LocalDate fecha = LocalDate.of(year, month, day).plusMonths(1);
 
-		LicenciaTemporal licencia1 = new LicenciaTemporal("juan@um.es","http://api.um.es/disco/v1/",fecha);
-		LicenciaTransaccionesLimitada licencia2 = new LicenciaTransaccionesLimitada("pepe@um.es","http://api.um.es/disco/v1/",3);
-		LicenciaDiario licencia3 = new LicenciaDiario("pepe@um.es","http://api.um.es/disco/v1/",4,1);
+		LicenciaTemporal licencia1 = new LicenciaTemporal("juan@um.es", "http://api.um.es/disco/v1/", fecha);
+		LicenciaTransaccionesLimitada licencia2 = new LicenciaTransaccionesLimitada("pepe@um.es", 
+				"http://api.um.es/disco/v1/", 3);
+		LicenciaDiario licencia3 = new LicenciaDiario("pepe@um.es", "http://api.um.es/disco/v1/", 4, 1);
 		
 		LinkedList<Licencia> licencias = new LinkedList<Licencia>();
 		licencias.add(licencia1);
@@ -34,7 +37,7 @@ public class Programa {
 		licencias.add(licencia3);
 	    for (Licencia licencia : licencias) {
 			System.out.println(licencia);
-			System.out.println("----------------------------------------------------------------------------");
+			System.out.println("-------------------------------------------------------------------------");
 			
 		}
 	    
@@ -53,18 +56,18 @@ public class Programa {
 				Transaccion transaccion = licencia.getAutorizacion();
 	    	if (transaccion == null) {
 				System.out.println("No autorizada");
-			}else {
+			} else {
 				System.out.println(transaccion);
 			}
 			}
 	    	
-			System.out.println("----------------------------------------------------------------------------");
+			System.out.println("----------------------------------------------------------------------");
 			
 		}
 	    
 	    for (Licencia licencia : licencias) {
 			System.out.println(licencia);
-			System.out.println("----------------------------------------------------------------------------");
+			System.out.println("----------------------------------------------------------------------");
 			
 		}
 	    
@@ -79,7 +82,7 @@ public class Programa {
 		System.out.println("COPIA DE LICENCIAS");
 	    for (Licencia licencia : licenciasCopia) {
 			System.out.println(licencia);
-			System.out.println("----------------------------------------------------------------------------");
+			System.out.println("-----------------------------------------------------------------------");
 			
 		}
 	}

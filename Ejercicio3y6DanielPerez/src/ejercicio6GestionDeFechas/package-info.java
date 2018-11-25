@@ -5,4 +5,4 @@
  * @author Dani_
  *
  */
-package Ejercicio6GestionDeFechas;
+package ejercicio6GestionDeFechas;
