@@ -5,6 +5,7 @@ package ejercicio6GestionDeFechas;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
+import java.util.List;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -38,7 +39,7 @@ public abstract class Espacios implements Cloneable {
 	 * @param capacidad La capacidad del espacio
 	 * La desceripcion del espacio es una concatenacion del nombre y la ubicacion
 	 */
-	public Espacios(String nombre, String ubicacion, int capacidad) {
+	protected Espacios(String nombre, String ubicacion, int capacidad) {
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 		this.capacidad = capacidad;
@@ -52,7 +53,7 @@ public abstract class Espacios implements Cloneable {
 	 * @param nombre El nombre del espacio
 	 * @param ubicacion La ubicacion del espacio
 	 */
-	public Espacios(String nombre, String ubicacion) {
+	protected Espacios(String nombre, String ubicacion) {
 		 this(nombre, ubicacion, 30);	
 	}
 
@@ -127,7 +128,7 @@ public abstract class Espacios implements Cloneable {
 	 *
 	 * @return las reservas
 	 */
-	public LinkedList<Reservas> getReservas() {
+	public List<Reservas> getReservas() {
 		LinkedList<Reservas> reservas = new LinkedList<Reservas>(this.reservas);
 		return reservas;
 	}

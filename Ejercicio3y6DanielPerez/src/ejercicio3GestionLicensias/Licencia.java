@@ -39,7 +39,7 @@ public abstract class Licencia implements Cloneable {
 	 * @param email El email de la licencia
 	 * @param servicio El servicio de la licencia
 	 */
-	public Licencia(String email, String servicio) {
+	protected Licencia(String email, String servicio) {
 		this.email = email;
 		this.servicio = servicio;
 		this.codigo = UUID.randomUUID().toString();

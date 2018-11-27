@@ -5,6 +5,7 @@ package ejercicio3GestionLicensias;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 // TODO: Auto-generated Javadoc
 
 /**
@@ -72,7 +73,9 @@ public class LicenciaDiario extends LicenciaTransaccionesLimitada {
 	 *
 	 * @return the mapa
 	 */
-	public HashMap<Integer, LinkedList<Transaccion>> getMapa() {
+	public Map<Integer, LinkedList<Transaccion>> getMapa() {
+		HashMap<Integer, LinkedList<Transaccion>> mapa = 
+				new HashMap<Integer, LinkedList<Transaccion>>(this.mapa);
 		return mapa;
 	}
 	
