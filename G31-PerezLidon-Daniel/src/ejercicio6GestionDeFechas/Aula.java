@@ -7,10 +7,9 @@ import java.time.LocalDate;
 import java.util.HashSet;
 
 /**
- * Clase Aula.
- *
  * @author Dani_
  * 
+ * Clase Aula.
  * Clase que representa el espacio denominado Aula desciende de Espacios
  */
 public class Aula extends Espacios  implements Cloneable	{
@@ -38,8 +37,7 @@ public class Aula extends Espacios  implements Cloneable	{
 	 * @param ubicacion the ubicacion
 	 */
 	public Aula(String nombre, String ubicacion) {
-		super(nombre, ubicacion, 30);
-		examenes = new HashSet<LocalDate>();
+		this(nombre, ubicacion, 30);
 	}
 	
 	/**
@@ -54,7 +52,7 @@ public class Aula extends Espacios  implements Cloneable	{
 		}
 	}
 	
-	/* Metodo heredado de la clase Espacio(Era un metodo abstracto)
+	/** Metodo heredado de la clase Espacio(metodo abstracto).
 	 * @see ejercicio6GestionDeFechas.Espacios#aplicable(java.lang.String, java.time.LocalDate)
 	 * 
 	 * comprueba si no hay examenes en los dias que se quiere reservar 
@@ -77,10 +75,8 @@ public class Aula extends Espacios  implements Cloneable	{
 		return true;
 	}
 	
-	/* Metodo heredado de la clase Espacio
-	 * @see ejercicio6GestionDeFechas.Espacios#clone()
-	 * 
-	 * Modificamos la copia para que tenga en cuenta el atributo examenes
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Aula clone() {
@@ -90,10 +86,8 @@ public class Aula extends Espacios  implements Cloneable	{
 		return copiaAula;
 	}
 	
-	/* Metodo heredado de la clase Espacio
-	 * @see ejercicio6GestionDeFechas.Espacios#toString()
-	 * 
-	 * Lo modificamos para que tenga en cuenta el atributo examenes
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

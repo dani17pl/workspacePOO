@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: POO Checks
+    Description: 
+Reglas de estilo para la asignatura de POO
+-->
+<module name="Checker">
+  <property name="severity" value="warning"/>
+  <property name="fileExtensions" value="java, properties, xml"/>
+  <module name="TreeWalker">
+    <module name="JavadocMethod"/>
+    <module name="JavadocType"/>
+    <module name="JavadocStyle"/>
+    <module name="ConstantName">
+      <message key="name.invalidPattern" value="Los nombres de las constantes se escriben en mayusculas. Ejemplo: DEFAULT_VALUE"/>
+    </module>
+    <module name="LocalFinalVariableName">
+      <message key="name.invalidPattern" value="Los nombres de las variables empiezan por minúsculas."/>
+    </module>
+    <module name="LocalVariableName">
+      <message key="name.invalidPattern" value="Los nombres de variables y parámetros empiezan por minúsculas."/>
+    </module>
+    <module name="MemberName">
+      <message key="name.invalidPattern" value="Los nombres de los atributos empiezan por minúsculas."/>
+    </module>
+    <module name="MethodName">
+      <message key="name.invalidPattern" value="Los nombres de los métodos deben comenzar por minúsculas."/>
+      <message key="method.name.equals.class.name" value="Un método no puede tener el mismo nombre que la clase."/>
+    </module>
+    <module name="PackageName">
+      <property name="format" value="^[a-z]+(\.[a-z][a-zA-Z0-9_]*)*$"/>
+      <message key="name.invalidPattern" value="Los nombres de paquetes y subpaquetes deben comenzar por minúsculas."/>
+    </module>
+    <module name="ParameterName">
+      <message key="name.invalidPattern" value="Los nombres de los parámetros deben comenzar por minúsculas."/>
+    </module>
+    <module name="StaticVariableName">
+      <message key="name.invalidPattern" value="Los nombres de los atributos de clase deben comenzar por minúsculas."/>
+    </module>
+    <module name="TypeName">
+      <property name="tokens" value="CLASS_DEF,INTERFACE_DEF,ENUM_DEF"/>
+      <message key="name.invalidPattern" value="Los nombres de los tipos (Clase, Interfaz, Enum) deben comenzar por mayúsculas."/>
+    </module>
+    <module name="AvoidStarImport">
+      <message key="import.avoidStar" value="Se debe evitar la importación de todo el paquete ''.*'' Es preferible importar sólo las clases que se vayan a utilizar. "/>
+    </module>
+    <module name="RedundantImport">
+      <message key="import.same" value="No es necesario importar las clases del mismo paquete."/>
+      <message key="import.duplicate" value="Import duplicado."/>
+      <message key="import.lang" value="No es necesario importar las clases del paquete  java.lang"/>
+    </module>
+    <module name="UnusedImports">
+      <message key="import.unused" value="La clase importada no está siendo utilizada."/>
+    </module>
+    <module name="LineLength">
+      <property name="max" value="120"/>
+      <message key="maxLineLen" value="La línea es mayor de  {0,number,integer} caracteres (tiene {1,number,integer})."/>
+    </module>
+    <module name="MethodLength">
+      <message key="maxLen.method" value="El método tiene  {0,number,integer} lineas (máximo permitido  {1,number,integer})."/>
+    </module>
+    <module name="ParameterNumber">
+      <message key="maxParam" value="Más de {0,number,integer} parámetros (se han encontrado {1,number,integer})."/>
+    </module>
+    <module name="EmptyForIteratorPad">
+      <message key="ws.notFollowed" value="''{0}'' no está seguido de un espacio en blanco."/>
+      <message key="ws.followed" value="''{0}'' está seguido de un espacio en blanco."/>
+    </module>
+    <module name="GenericWhitespace">
+      <message key="ws.notPreceded" value="''{0}'' no está precedido por un espacion en blanco."/>
+      <message key="ws.followed" value="''{0}'' está seguido de un espacio en blanco."/>
+      <message key="ws.illegalFollow" value="''{0}'' está seguido de un carácter illegal."/>
+      <message key="ws.preceded" value="''{0}'' está precedido por un espacio en blanco."/>
+    </module>
+    <module name="MethodParamPad">
+      <message key="line.previous" value="''{0}'' debería estar en la línea de arriba."/>
+      <message key="ws.notPreceded" value="''{0}'' no está precedido por un espacio en blanco."/>
+      <message key="ws.preceded" value="''{0}'' está precedido por un espacio en blanco."/>
+    </module>
+    <module name="NoWhitespaceAfter">
+      <message key="ws.followed" value="''{0}'' está seguido por un espacio en blanco."/>
+    </module>
+    <module name="NoWhitespaceBefore">
+      <message key="ws.preceded" value="''{0}'' está precedido por un espacio en blanco."/>
+    </module>
+    <module name="OperatorWrap">
+      <message key="line.previous" value="''{0}'' debería estar en la línea anterior."/>
+      <message key="line.new" value="''{0}'' debería estar en una nueva línea."/>
+    </module>
+    <module name="ParenPad"/>
+    <module name="TypecastParenPad">
+      <property name="tokens" value="RPAREN,TYPECAST"/>
+      <message key="ws.notPreceded" value="''{0}'' no está precedido por un espacio en blanco."/>
+      <message key="ws.notFollowed" value="''{0}'' no está seguido por un espacio en blanco."/>
+      <message key="ws.followed" value="''{0}'' está seguido por un espacio en blanco."/>
+      <message key="ws.preceded" value="''{0}'' está precedido por un espacio en blanco."/>
+    </module>
+    <module name="WhitespaceAfter">
+      <message key="ws.notFollowed" value="''{0}'' no está seguido de un espacio en blanco."/>
+    </module>
+    <module name="WhitespaceAround">
+      <property name="tokens" value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,DO_WHILE,EQUAL,GE,GT,LAMBDA,LAND,LCURLY,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,RCURLY,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,TYPE_EXTENSION_AND,WILDCARD_TYPE"/>
+      <message key="ws.notPreceded" value="''{0}'' no está precedido por un espacio en blanco."/>
+      <message key="ws.notFollowed" value="''{0}'' no está seguido de un espacio en blanco."/>
+    </module>
+    <module name="EmptyBlock"/>
+    <module name="LeftCurly"/>
+    <module name="RightCurly"/>
+    <module name="ArrayTypeStyle">
+      <message key="array.type.style" value="La posición de los [] no es correcta."/>
+    </module>
+  </module>
+  <module name="FileLength">
+    <message key="maxLen.file" value="El tamaño del fichero es {0,number,integer} lineas (máximo permitido {1,number,integer})."/>
+  </module>
+  <module name="JavadocPackage">
+    <message key="javadoc.packageInfo" value="Falta la documentación del paquete (fichero package-info.java)"/>
+  </module>
+</module>

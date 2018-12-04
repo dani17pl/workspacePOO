@@ -5,6 +5,7 @@ package ejercicio3GestionLicensias;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.UUID;
 
 // TODO: Auto-generated Javadoc
@@ -83,7 +84,7 @@ public abstract class Licencia implements Cloneable {
 	 *
 	 * @return las transacciones
 	 */
-	public LinkedList<Transaccion> getTransacciones() {
+	public List<Transaccion> getTransacciones() {
 		LinkedList<Transaccion> transacciones = new  LinkedList<Transaccion>(this.transacciones);
 		return transacciones;
 	}
@@ -141,8 +142,7 @@ public abstract class Licencia implements Cloneable {
 		if (aplicable() && !this.revocada) {
 			Transaccion transaccion = new Transaccion(this, LocalDate.now());
 			this.transacciones.add(transaccion);
-			Transaccion transaccionAux = new Transaccion(transaccion.getLicencia(), transaccion.getFecha());
-			return transaccionAux;
+			return transaccion;
 		} else {
 			return null;
 		}
@@ -157,14 +157,14 @@ public abstract class Licencia implements Cloneable {
 	 */
 	public abstract boolean aplicable();
 	
-	/* Metodo heredado de la clase Object
+	/** Metodo heredado de la clase Object.
 	 * @see java.lang.Object#clone()
 	 * 
 	 * Metodo que realizara una copia de la licencia
-	 * Modifica el atributo transacciones
+	 * Modifica el atributo transacciones 
 	 *  
 	 * @return retorna la licencia
-	 */
+	 **/
 	@Override
 	public Licencia clone() {
 		Licencia copiaLicencia = copiaSuperficial();
@@ -188,10 +188,8 @@ public abstract class Licencia implements Cloneable {
 		 return null;
 	}
 	
-	/* Metodo heredado de la clase Object
-	 * @see java.lang.Object#toString()
-	 * 
-	 * Muestra como se representa una licencia en pantalla
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

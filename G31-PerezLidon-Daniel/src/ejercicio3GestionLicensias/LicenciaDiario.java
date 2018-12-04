@@ -79,7 +79,7 @@ public class LicenciaDiario extends LicenciaTransaccionesLimitada {
 		return mapa;
 	}
 	
-	/*  Metodo que hereda de la clase LicenciaTransaccionesLimitada
+	/**  Metodo que hereda de la clase LicenciaTransaccionesLimitada.
 	 * @see ejercicio3GestionLicensias.LicenciaTransaccionesLimitada#aplicable()
 	 * 
 	 * Comprueba si es no se ha superado el limite de esa licencia con una llamada al metodo del padre
@@ -96,7 +96,7 @@ public class LicenciaDiario extends LicenciaTransaccionesLimitada {
 		return false;	
 	}
 	
-	/* Metodo que hereda de la clase LicenciaTransaccionesLimitada
+	/** Metodo que hereda de la clase LicenciaTransaccionesLimitada.
 	 * @see ejercicio3GestionLicensias.LicenciaTransaccionesLimitada#getAutorizacion()
 	 * 
 	 * Si se ha podido hacer la autorizacion
@@ -129,7 +129,7 @@ public class LicenciaDiario extends LicenciaTransaccionesLimitada {
 		}
 	}
 
-	/* Metodo que hereda de la clase LicenciaTransaccionesLimitada
+	/** Metodo que hereda de la clase LicenciaTransaccionesLimitada.
 	 * @see ejercicio3GestionLicensias.LicenciaTransaccionesLimitada#clone()
 	 * Se modifica el atributo mapa para que sea una copia profunda
 	 */
@@ -141,10 +141,8 @@ public class LicenciaDiario extends LicenciaTransaccionesLimitada {
 		return copiaLicencia;
 	}
 	
-	/*  Metodo que hereda de la clase LicenciaTransaccionesLimitada
-	 * @see ejercicio3GestionLicensias.LicenciaTransaccionesLimitada#toString()
-	 * 
-	 * Añade las propiedades maxlimiteDiario, el limitediario y el mapa 
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

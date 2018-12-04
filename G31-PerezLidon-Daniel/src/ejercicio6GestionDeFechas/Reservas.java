@@ -60,7 +60,7 @@ public class Reservas {
 		return ocupacion;
 	}
 	
-	/* Metodo que hereda de Object
+	/** Metodo que hereda de Object.
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 * Clase que representa si una reserva es igual a otra para 
 	 * ello se comprueba si la reserva tiene el mismo usuario, ocupacion y espacio 
@@ -79,7 +79,7 @@ public class Reservas {
 				&& this.espacio.equals(otro.espacio);
 	}
 	
-	/* Metodo que hereda de Object
+	/** Metodo que hereda de Object.
 	 * @see java.lang.Object#hashCode()
 	 * 
 	 * Sobrescribimos el método para que se comporte de forma acorde a la que lo hace .equals()
@@ -94,10 +94,8 @@ public class Reservas {
 		return result;
 	}
 	
-	/* Metodo que hereda de Object 
-	 * @see java.lang.Object#toString()
-	 * 
-	 * Mostrara como se representa en pantalla la reserva
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

@@ -48,11 +48,8 @@ public class Transaccion {
 		return fecha;
 	}
 	
-	/* Metodo heredado de la clase Object
-	 * @see java.lang.Object#toString()
-	 * 
-	 * Muestra como se representa una transaccion en la pantalla
-	 * La licencia sera el nombre de la clase para saber que tipo de licencia es
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

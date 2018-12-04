@@ -11,8 +11,8 @@ package ejercicio6GestionDeFechas;
  */
 public enum Tramo {
 	
-	/** The MAÑANA. */
+	/** MAÑANA.  */
 	MAÑANA, 
- /** The tarde. */
+ /** TARDE. */
  TARDE
 }

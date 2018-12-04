@@ -4,6 +4,7 @@
 package ejercicio6GestionDeFechas;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.LinkedList;
 
 /**
@@ -19,7 +20,6 @@ public class Programa {
 	 */
 	public static void main(String[] args) {
 				
-		// TODO Auto-generated method stub
 		Aula aula1 = new Aula("A.01", "Aulario norte", 165);
 		aula1.addExamenes(LocalDate.of(2019, 1, 10), LocalDate.of(2019, 1, 11));
 		Aula aula2 = aula1.clone();
@@ -32,12 +32,7 @@ public class Programa {
 		SalaDeReunion sala3 = new SalaDeReunion("2.03", "Fecultad de informatica");
 		
 		LinkedList<Espacios> espacios = new LinkedList<Espacios>();
-		espacios.add(aula1);
-		espacios.add(aula2);
-		espacios.add(aula3);
-		espacios.add(sala1);
-		espacios.add(sala2);
-		espacios.add(sala3);
+		Collections.addAll(espacios, aula1, aula2, aula3, sala1, sala2, sala3);
 		
 		for (Espacios espacio : espacios) {
 			System.out.println(espacio);

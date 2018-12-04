@@ -5,11 +5,13 @@ package ejercicio6GestionDeFechas;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class SalaDeReunion.
  *
@@ -51,15 +53,13 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 	 *
 	 * @return los usuarios que tienen reservas o null si no hay reservas 
 	 */
-	public ArrayList<String> getUsuariosReservas() {
-		if (mapa.isEmpty()) {
+	public Set<String> getUsuariosReservas() {
+		if (this.mapa.isEmpty()) {
 			return null;
 		} else {
-		ArrayList<String> lista = new ArrayList<String>(mapa.size());
-		for (String usuario : mapa.keySet()) {
-			lista.add(usuario);
-		}
-		return lista;
+		HashSet<String> mapa = new HashSet<String>(this.mapa.keySet());
+		
+		return mapa;
 		}	
 	}
 	
@@ -69,11 +69,12 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 	 * @param usuario del que queremos sus reservas
 	 * @return las reservas del usuario en caso de que el usuario no tenga reservas retorna null
 	 */
-	public LinkedList<Reservas> getReservasDeUsuario(String usuario) {
+	public List<Reservas> getReservasDeUsuario(String usuario) {
 		
 		if (!mapa.isEmpty()) {
 			if (mapa.containsKey(usuario)) {
-			return mapa.get(usuario);
+				LinkedList<Reservas> lista = new LinkedList<Reservas>(mapa.get(usuario));
+				return lista;
 			}
 		}
 	
@@ -81,7 +82,7 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 		
 	}
 	
-	/* Metodo heredado de la clase Espacio(Era un metodo abstracto)
+	/** Metodo heredado de la clase Espacio(Era un metodo abstracto).
 	 * @see ejercicio6GestionDeFechas.Espacios#aplicable(java.lang.String, java.time.LocalDate)
 	 * 
 	 * Comprueba que la fecha no coincida con un dia de la semana que sea Sabado y Domingo
@@ -93,7 +94,7 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 			return false;
 		}
 		
-		LinkedList<Reservas> reservas = getReservasDeUsuario(usuario);
+		LinkedList<Reservas> reservas = (LinkedList<Reservas>) getReservasDeUsuario(usuario);
 		if (reservas != null) {
 			for (Reservas reserva : reservas) {
 				if (reserva.getOcupacion().getFechaCaducidad().isAfter(LocalDate.now())) {
@@ -105,7 +106,7 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 		return true;
 	}
 	
-	/* Metodo heredado de la clase Espacio
+	/** Metodo heredado de la clase Espacio.
 	 * @see ejercicio6GestionDeFechas.Espacios#reservar(java.lang.String, java.time.LocalDate, 
 	 * ejercicio6GestionDeFechas.Tramo)
 	 * 
@@ -130,10 +131,8 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 		
 	}
 	
-	/* Metodo heredado de la clase Espacio
-	 * @see ejercicio6GestionDeFechas.Espacios#clone()
-	 * 
-	 * Modificamos la copia para que tenga en cuenta el atributo mapa
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SalaDeReunion clone() {
@@ -143,10 +142,8 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 		return copiaSalaDeReunion;
 	}
 	
-	/* Metodo heredado de la clase Espacio
-	 * @see ejercicio6GestionDeFechas.Espacios#toString()
-	 * 
-	 * Lo modificamos para que tenga en cuenta el atributo mapa
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

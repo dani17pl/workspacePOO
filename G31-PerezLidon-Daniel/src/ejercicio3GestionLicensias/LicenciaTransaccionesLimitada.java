@@ -48,8 +48,9 @@ public class LicenciaTransaccionesLimitada extends Licencia  {
 		return maxNumeroTransacciones;
 	}
 
-	/* Metodo que hereda de la clase Licencia(es metodo abstacto)
+	/** Metodo que hereda de la clase Licencia(es metodo abstacto).
 	 * @see ejercicio3GestionLicensias.Licencia#aplicable()
+	 * 
 	 * comprueba que el numero de transacciones restantes sea superior a 0
 	 */
 	@Override
@@ -62,7 +63,7 @@ public class LicenciaTransaccionesLimitada extends Licencia  {
 		}	
 	}
 	
-	/* Metodo que hereda de la clase Licencia
+	/** Metodo que hereda de la clase Licencia.
 	 * @see ejercicio3GestionLicensias.Licencia#getAutorizacion()
 	 * 
 	 * Redefinimos el metodo para cuando se consigue la autorizacion restar uno al 
@@ -79,8 +80,8 @@ public class LicenciaTransaccionesLimitada extends Licencia  {
 		}
 	}
 	
-	/* Metodo que hereda de la clase Licencia
-	 * @see ejercicio3GestionLicensias.Licencia#clone()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public LicenciaTransaccionesLimitada clone() {
@@ -91,8 +92,8 @@ public class LicenciaTransaccionesLimitada extends Licencia  {
 	}
 	
 	
-	/* (non-Javadoc)
-	 * @see ejercicio3GestionLicensias.Licencia#toString()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

@@ -53,7 +53,7 @@ public class LicenciaTemporal extends Licencia {
 		this.fechaCaducidad.plusMonths(newmonth);
 	}
 
-	/* Metodo que hereda de la clase Licencia (es metodo abstacto)
+	/** Metodo que hereda de la clase Licencia (es metodo abstacto).
 	 * @see ejercicio3GestionLicensias.Licencia#aplicable()
 	 * 
 	 * Comprueba que la fecha actual no sea superior a la fecha de caducidad
@@ -67,10 +67,8 @@ public class LicenciaTemporal extends Licencia {
 		}
 	}
 	
-	/* Metodo que hereda de la clase Licencia
-	 * @see ejercicio3GestionLicensias.Licencia#clone()
-	 * 
-	 * Aplicamos regla covariante
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public LicenciaTemporal clone() {
@@ -78,10 +76,8 @@ public class LicenciaTemporal extends Licencia {
 		return copiaLicencia;
 	}
 	
-	/* Metodo que hereda de la clase Licencia
-	 * @see ejercicio3GestionLicensias.Licencia#toString()
-	 * 
-	 * añade las propiedades de la licencia temporal
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

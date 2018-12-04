@@ -135,7 +135,7 @@ public abstract class Espacios implements Cloneable {
 
 
 	/**
-	 * Consultar Consultar si hay reservas para una fecha y un tramo .
+	 * Consultar. Consultar si hay reservas para una fecha y un tramo .
 	 *
 	 * @param fecha La fecha a consultar
 	 * @param tramo El tramo a consultar
@@ -203,8 +203,8 @@ public abstract class Espacios implements Cloneable {
 		return this.reservas.remove(reserva);
 	}
 	
-	/* 
-	 * Clase que hereda de Object Realiza una copia profunda del espacio
+	/** 
+	 * Clase que hereda de Object Realiza una copia profunda del espacio.
 	 */
 	@Override
 	public Espacios clone() {
@@ -230,8 +230,8 @@ public abstract class Espacios implements Cloneable {
 		 return null;
 	}
 
-	/* 
-	 * Metodo que hereda de Object Mostrara como se representa en pantalla el espacio
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       

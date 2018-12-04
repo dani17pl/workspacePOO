@@ -43,8 +43,8 @@ public class Ocupacion {
 		return fechaCaducidad;
 	}
 	
-	/* 
-	 * Metodo heredado de Object
+	/** 
+	 * Metodo heredado de Object.
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 * 
 	 * Clase que representa si una ocupacion es igual a otra para 
@@ -67,7 +67,7 @@ public class Ocupacion {
 	}
 	
 
-	/* Metodo heredado de Object
+	/** Metodo heredado de Object.
 	 * @see java.lang.Object#hashCode()
 	 * 
 	 * sobrescribimos el método para que se comporte de forma acorde a la que lo hace .equals()
@@ -81,10 +81,8 @@ public class Ocupacion {
 		return result;
 	}
 
-	/* Metodo que hereda de Object 
-	 * @see java.lang.Object#toString()
-	 * 
-	 * Mostrara como se representa en pantalla el espacio
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {	       
