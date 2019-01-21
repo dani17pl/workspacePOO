@@ -11,15 +11,37 @@ import java.util.LinkedList;
  * @author Dani_
  *
  */
+
 public class Programa {
 
+	private static void elimina(int [] array, int elemento) {
+		for (int i=0; i< array.length; i++) {
+			if (array[i] == elemento) {
+				array[i]=9;
+				elemento=0;
+			}
+		}		
+	
+	}
+	private static void bb(String [] array, String elemento) {
+		array[0] = elemento;
+	}
 	/**
 	 * Metodo main. Donde empieza el programa
 	 *
 	 * @param args argumentos.
 	 */
 	public static void main(String[] args) {
-				
+		int []numero = {1,2,3};
+		int el=3;
+		System.out.println(numero[2]);
+		elimina(numero,el);
+		System.out.println(numero[2]);
+		
+		String []hola= {"hola"};
+		bb(hola,"adios");
+		System.out.println(hola[0]);
+		
 		Aula aula1 = new Aula("A.01", "Aulario norte", 165);
 		aula1.addExamenes(LocalDate.of(2019, 1, 10), LocalDate.of(2019, 1, 11));
 		Aula aula2 = aula1.clone();
@@ -33,6 +55,7 @@ public class Programa {
 		
 		LinkedList<Espacios> espacios = new LinkedList<Espacios>();
 		Collections.addAll(espacios, aula1, aula2, aula3, sala1, sala2, sala3);
+		
 		
 		for (Espacios espacio : espacios) {
 			System.out.println(espacio);

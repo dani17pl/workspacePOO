@@ -43,7 +43,7 @@ public class Bitacora {
 	
 	//Metodos funcionalidad
 	
-	public boolean registrarEntrada(String texto) {
+	protected boolean registrarEntrada(String texto) {
 		Entrada entrada = new Entrada(texto);
 		boolean insertado=entradas.add(entrada);
 		return insertado;

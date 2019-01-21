@@ -16,6 +16,7 @@ public class BitacoraInteligente extends Bitacora{
 	//Atributoos
 	
 	private final LinkedList<String> palabrasProhibidas;
+	
 	/**
 	 * @return the palabrasProhibidas
 	 */

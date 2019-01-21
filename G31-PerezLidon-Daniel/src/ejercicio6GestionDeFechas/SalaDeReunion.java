@@ -147,7 +147,7 @@ public class SalaDeReunion extends Espacios  implements Cloneable {
 	 */
 	@Override
 	public String toString() {	       
-        return "Sala de reunion: \n" + super.toString()
+        return  super.toString()
         		+ "Reservas de usuario :" + this.mapa + "\n";
     }
 	

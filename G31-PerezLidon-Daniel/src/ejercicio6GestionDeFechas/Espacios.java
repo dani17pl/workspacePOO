@@ -236,7 +236,8 @@ public abstract class Espacios implements Cloneable {
 	@Override
 	public String toString() {	       
         return 
-        		 "nombre :" + this.nombre + "\n"
+        		this.getClass().getSimpleName() + "\n"
+        		+ "nombre :" + this.nombre + "\n"
         		+ "ubicacion:" + this.ubicacion + "\n"
         		+ "descripcion:" + this.descripcion + "\n"
         		+ "capacidad :" + this.capacidad + "\n"

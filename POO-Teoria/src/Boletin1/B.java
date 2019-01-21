@@ -13,4 +13,7 @@ public class B {
 	{
 		this.x=x;
 	}
+	protected B yoMismo() {
+		return this;
+	}
 }

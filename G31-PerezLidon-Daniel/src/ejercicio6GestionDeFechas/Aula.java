@@ -91,7 +91,7 @@ public class Aula extends Espacios  implements Cloneable	{
 	 */
 	@Override
 	public String toString() {	       
-        return "Aula: \n" + super.toString()
+        return super.toString()
         		+ "examenes :" + this.examenes + "\n";
     }
 	

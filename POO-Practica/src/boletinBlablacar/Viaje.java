@@ -3,14 +3,17 @@
  */
 package boletinBlablacar;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.LinkedList;
+
 
 /**
  * @author Dani_
  *
  */
-public class Viaje {
+public class Viaje implements Cloneable, Comparable<Viaje>{
 
 	private final String propietario;
 	private final String coche;
@@ -58,6 +61,14 @@ public class Viaje {
 		}
 		return null;
 	}
+	protected boolean EliminarReserva(Reserva reserva) {
+		if (this.reservas.remove(reserva))
+		{
+		     return true;
+		}
+		else return false;
+	}
+	
 	/**
 	 * @return the propietario
 	 */
@@ -95,6 +106,35 @@ public class Viaje {
 		return reservas;
 	}
 	
+	protected LinkedList<Reserva> getReservas(Comparator<Reserva> c) {
+		reservas.sort(c);
+		return reservas;
+	}
+	
+	@Override
+	public Viaje clone() {
+		Viaje copiasViaje = copiaSuperficial();
+		//Modificamos para hacer la copia profunda
+		 copiasViaje.reservas =new LinkedList( this.reservas );
+		
+		return copiasViaje;
+	}
+	
+	/**
+	 * Metodo que realiza una copia superficial del espacio llamando al metodo
+	 * clone de la clase onject.
+	 *
+	 * @return the espacios
+	 */
+	private Viaje copiaSuperficial() {
+		 try {
+		        Viaje copiaviaje = (Viaje) super.clone();	 
+		        return copiaviaje;
+		    } catch (CloneNotSupportedException e) {
+		    	 System.err.println("La clase no es cloneable");
+		    }
+		 return null;
+	}
 	
 	public String toString (){
 	       
@@ -107,4 +147,15 @@ public class Viaje {
         		+ "reservas:" +this.reservas + "\n"
         		;
     }
+
+	@Override
+	public int compareTo(Viaje o) {
+		  int resultado=0;
+	        if (this.fechaSalida.isBefore(o.fechaSalida)) {   resultado = -1;      }
+
+	        else if (this.fechaSalida.isAfter(o.fechaSalida)) {    resultado = 1;      }
+	        else {resultado =-1;}
+		return resultado;
+	}
+	
 }
